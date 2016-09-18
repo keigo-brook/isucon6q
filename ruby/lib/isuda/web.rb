@@ -56,19 +56,19 @@ module Isuda
     helpers do
       def db
         Thread.current[:db] ||=
-          begin
-            _, _, attrs_part = settings.dsn.split(':', 3)
-            attrs = Hash[attrs_part.split(';').map {|part| part.split('=', 2) }]
-            mysql = Mysql2::Client.new(
-              username: settings.db_user,
-              password: settings.db_password,
-              database: attrs['db'],
-              encoding: 'utf8mb4',
-              init_command: %|SET SESSION sql_mode='TRADITIONAL,NO_AUTO_VALUE_ON_ZERO,ONLY_FULL_GROUP_BY'|,
-            )
-            mysql.query_options.update(symbolize_keys: true)
-            mysql
-          end
+            begin
+              _, _, attrs_part = settings.dsn.split(':', 3)
+              attrs = Hash[attrs_part.split(';').map { |part| part.split('=', 2) }]
+              mysql = Mysql2::Client.new(
+                  username: settings.db_user,
+                  password: settings.db_password,
+                  database: attrs['db'],
+                  encoding: 'utf8mb4',
+                  init_command: %|SET SESSION sql_mode='TRADITIONAL,NO_AUTO_VALUE_ON_ZERO,ONLY_FULL_GROUP_BY'|,
+              )
+              mysql.query_options.update(symbolize_keys: true)
+              mysql
+            end
       end
 
       def register(name, pw)
@@ -82,7 +82,7 @@ module Isuda
         db.last_id
       end
 
-      def encode_with_salt(password: , salt: )
+      def encode_with_salt(password:, salt:)
         Digest::SHA1.hexdigest(salt + password)
       end
 
@@ -91,7 +91,7 @@ module Isuda
         res = Net::HTTP.post_form(isupam_uri, 'content' => content)
         validation = JSON.parse(res.body)
         validation['valid']
-        ! validation['valid']
+        !validation['valid']
       end
 
       def htmlify(entry_id)
@@ -99,12 +99,37 @@ module Isuda
         escaped_content = entry[:escaped_content]
         total_entries = db.xquery(%| SELECT count(id) AS total_entries FROM entry |).first[:total_entries].to_i
 
-        if entry[:linked_at].to_i < total_entries
+        if escaped_content.nil?
+          content = entry[:description]
+          keywords = db.xquery(%| SELECT keyword FROM entry ORDER BY  character_length(keyword) DESC |).to_a
+          pattern = keywords.map { |k| Regexp.escape(k[:keyword]) }.join('|')
+          kw2hash = {}
+          hashed_content = content.gsub(/(#{pattern})/) { |m|
+            matched_keyword = $1
+            "isuda_#{Digest::SHA1.hexdigest(matched_keyword)}".tap do |hash|
+              kw2hash[matched_keyword] = hash
+            end
+          }
+          escaped_content = Rack::Utils.escape_html(hashed_content)
+          kw2hash.each do |(keyword, hash)|
+            keyword_url = url("/keyword/#{Rack::Utils.escape_path(keyword)}")
+            anchor = '<a href="%s">%s</a>' % [keyword_url, Rack::Utils.escape_html(keyword)]
+            escaped_content.gsub!(hash, anchor)
+          end
+
+          query = %|
+            UPDATE entry
+            SET escaped_content = ?
+            WHERE id = ?
+          |
+          db.xquery(query, escaped_content, entry_id)
+          escaped_content = escaped_content.gsub(/\n/, "<br />\n")
+        elsif entry[:linked_at].to_i < total_entries
           content = escaped_content
           keywords = db.xquery(%| SELECT keyword FROM entry WHERE id > #{entry[:linked]} ORDER BY  character_length(keyword) DESC |).to_a
-          pattern = keywords.map {|k| Regexp.escape(k[:keyword]) }.join('|')
+          pattern = keywords.map { |k| Regexp.escape(k[:keyword]) }.join('|')
           kw2hash = {}
-          hashed_content = content.gsub(/(#{pattern})/) {|m|
+          hashed_content = content.gsub(/(#{pattern})/) { |m|
             matched_keyword = $1
             "isuda_#{Digest::SHA1.hexdigest(matched_keyword)}".tap do |hash|
               kw2hash[matched_keyword] = hash
@@ -124,31 +149,6 @@ module Isuda
             WHERE id = ?
           |
           db.xquery(query, escaped_content, entry_id, total_entries)
-          escaped_content = escaped_content.gsub(/\n/, "<br />\n")
-        elsif escaped_content.nil?
-          content = entry[:description]
-          keywords = db.xquery(%| SELECT keyword FROM entry ORDER BY  character_length(keyword) DESC |).to_a
-          pattern = keywords.map {|k| Regexp.escape(k[:keyword]) }.join('|')
-          kw2hash = {}
-          hashed_content = content.gsub(/(#{pattern})/) {|m|
-            matched_keyword = $1
-            "isuda_#{Digest::SHA1.hexdigest(matched_keyword)}".tap do |hash|
-              kw2hash[matched_keyword] = hash
-            end
-          }
-          escaped_content = Rack::Utils.escape_html(hashed_content)
-          kw2hash.each do |(keyword, hash)|
-            keyword_url = url("/keyword/#{Rack::Utils.escape_path(keyword)}")
-            anchor = '<a href="%s">%s</a>' % [keyword_url, Rack::Utils.escape_html(keyword)]
-            escaped_content.gsub!(hash, anchor)
-          end
-
-          query = %|
-            UPDATE entry
-            SET escaped_content = ?
-            WHERE id = ?
-          |
-          db.xquery(query, escaped_content, entry_id)
           escaped_content = escaped_content.gsub(/\n/, "<br />\n")
         end
         escaped_content
@@ -191,7 +191,7 @@ module Isuda
         ORDER BY updated_at DESC
         LIMIT #{per_page}
         OFFSET #{per_page * (page - 1)}
-      |)
+                          |)
       entries.each do |entry|
         entry[:html] = htmlify(entry[:id])
         entry[:stars] = load_stars(entry[:keyword])
@@ -205,10 +205,10 @@ module Isuda
       pages = [*from..to]
 
       locals = {
-        entries: entries,
-        page: page,
-        pages: pages,
-        last_page: last_page,
+          entries: entries,
+          page: page,
+          pages: pages,
+          last_page: last_page,
       }
       erb :index, locals: locals
     end
@@ -223,7 +223,7 @@ module Isuda
 
     post '/register' do
       name = params[:name] || ''
-      pw   = params[:password] || ''
+      pw = params[:password] || ''
       halt(400) if (name == '') || (pw == '')
 
       user_id = register(name, pw)
@@ -234,7 +234,7 @@ module Isuda
 
     get '/login', set_name: true do
       locals = {
-        action: 'login',
+          action: 'login',
       }
       erb :authenticate, locals: locals
     end
@@ -280,7 +280,7 @@ module Isuda
       entry[:html] = htmlify(entry[:id])
 
       locals = {
-        entry: entry,
+          entry: entry,
       }
       erb :keyword, locals: locals
     end
