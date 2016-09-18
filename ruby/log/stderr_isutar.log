@@ -400,3 +400,27 @@ I, [2016-09-18T11:40:13.963063 #11149]  INFO -- : worker=3 spawned pid=11149
 I, [2016-09-18T11:40:13.963159 #11149]  INFO -- : worker=3 ready
 I, [2016-09-18T11:40:13.963716 #11152]  INFO -- : worker=4 spawned pid=11152
 I, [2016-09-18T11:40:13.963945 #11152]  INFO -- : worker=4 ready
+I, [2016-09-18T11:45:45.630930 #11129]  INFO -- : reaped #<Process::Status: pid 11141 exit 0> worker=0
+I, [2016-09-18T11:45:45.631027 #11129]  INFO -- : reaped #<Process::Status: pid 11143 exit 0> worker=1
+I, [2016-09-18T11:45:45.631058 #11129]  INFO -- : reaped #<Process::Status: pid 11146 exit 0> worker=2
+I, [2016-09-18T11:45:45.631083 #11129]  INFO -- : reaped #<Process::Status: pid 11149 exit 0> worker=3
+I, [2016-09-18T11:45:45.631107 #11129]  INFO -- : reaped #<Process::Status: pid 11152 exit 0> worker=4
+I, [2016-09-18T11:45:45.631161 #11129]  INFO -- : master complete
+I, [2016-09-18T11:45:45.989434 #11908]  INFO -- : Refreshing Gem list
+I, [2016-09-18T11:45:46.032515 #11908]  INFO -- : listening on addr=0.0.0.0:5001 fd=11
+I, [2016-09-18T11:45:46.032618 #11908]  INFO -- : worker=0 spawning...
+I, [2016-09-18T11:45:46.033399 #11908]  INFO -- : worker=1 spawning...
+I, [2016-09-18T11:45:46.033870 #11908]  INFO -- : worker=2 spawning...
+I, [2016-09-18T11:45:46.034443 #11918]  INFO -- : worker=0 spawned pid=11918
+I, [2016-09-18T11:45:46.034562 #11918]  INFO -- : worker=0 ready
+I, [2016-09-18T11:45:46.035112 #11908]  INFO -- : worker=3 spawning...
+I, [2016-09-18T11:45:46.035577 #11920]  INFO -- : worker=1 spawned pid=11920
+I, [2016-09-18T11:45:46.035678 #11920]  INFO -- : worker=1 ready
+I, [2016-09-18T11:45:46.036689 #11908]  INFO -- : worker=4 spawning...
+I, [2016-09-18T11:45:46.037151 #11923]  INFO -- : worker=2 spawned pid=11923
+I, [2016-09-18T11:45:46.037273 #11923]  INFO -- : worker=2 ready
+I, [2016-09-18T11:45:46.037826 #11908]  INFO -- : master process ready
+I, [2016-09-18T11:45:46.038373 #11926]  INFO -- : worker=3 spawned pid=11926
+I, [2016-09-18T11:45:46.038481 #11926]  INFO -- : worker=3 ready
+I, [2016-09-18T11:45:46.038981 #11929]  INFO -- : worker=4 spawned pid=11929
+I, [2016-09-18T11:45:46.039088 #11929]  INFO -- : worker=4 ready

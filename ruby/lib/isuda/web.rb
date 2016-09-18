@@ -10,6 +10,7 @@ require 'rack/utils'
 require 'sinatra/base'
 require 'tilt/erubis'
 require 'stackprof'
+require 'pry-remote'
 
 module Isuda
   class Web < ::Sinatra::Base
@@ -93,9 +94,11 @@ module Isuda
       end
 
       def htmlify(content)
-        keywords = db.xquery(%| SELECT keyword FROM entry ORDER BY  character_length(keyword) DESC |)
-        pattern = keywords.map {|k| Regexp.escape(k) }.join('|')
+        keywords = db.xquery(%| SELECT keyword FROM entry ORDER BY  character_length(keyword) DESC |).to_a
+        #binding.remote_pry
+        pattern = keywords.map {|k| Regexp.escape(k[:keyword]) }.join('|')
         kw2hash = {}
+        #binding.remote_pry
         hashed_content = content.gsub(/(#{pattern})/) {|m|
           matched_keyword = $1
           "isuda_#{Digest::SHA1.hexdigest(matched_keyword)}".tap do |hash|

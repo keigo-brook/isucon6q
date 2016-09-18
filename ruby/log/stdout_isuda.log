@@ -1,0 +1,9 @@
+[pry-remote] Waiting for client on druby://127.0.0.1:9876
+[pry-remote] Client received, starting remote session
+[pry-remote] Remote session terminated
+[pry-remote] Continuing to stop service
+[pry-remote] Ensure stop service
+[pry-remote] Waiting for client on druby://127.0.0.1:9876
+[pry-remote] Client received, starting remote session
+[pry-remote] Remote session terminated
+[pry-remote] Ensure stop service
