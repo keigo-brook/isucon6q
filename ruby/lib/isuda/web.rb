@@ -9,8 +9,6 @@ require 'mysql2-cs-bind'
 require 'rack/utils'
 require 'sinatra/base'
 require 'tilt/erubis'
-require 'stackprof'
-require 'pry-remote'
 require 'cgi'
 
 module Isuda
@@ -26,8 +24,6 @@ module Isuda
     set :session_secret, 'tonymoris'
     set :isupam_origin, ENV['ISUPAM_ORIGIN'] || 'http://localhost:5050'
     set :isutar_origin, ENV['ISUTAR_ORIGIN'] || 'http://localhost:5001'
-    Dir.mkdir('/tmp/stackprof') unless File.exist?('/tmp/stackprof')
-    use StackProf::Middleware, enabled: true, mode: :wall, interval: 500, save_every: 100, path: '/tmp/stackprof'
 
     configure :development do
       require 'sinatra/reloader'
