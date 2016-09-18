@@ -189,9 +189,8 @@ module Isuda
 
       entries = db.xquery(%|
         SELECT id, keyword FROM entry
+        WHERE id BETWEEN #{per_page * (page - 1)}-1 AND #{per_page * (page - 1)}+#{per_page}
         ORDER BY updated_at DESC
-        LIMIT #{per_page}
-        OFFSET #{per_page * (page - 1)}
                           |)
       entries.each do |entry|
         entry[:html] = htmlify(entry[:id])
