@@ -266,8 +266,12 @@ module Isuda
         INSERT INTO entry (author_id, keyword, description, created_at, updated_at)
         VALUES (?, ?, ?, NOW(), NOW())
         ON DUPLICATE KEY UPDATE
-        author_id = ?, keyword = ?, description = ?, updated_at = NOW()
+        author_id = ?, keyword = ?, description = ?, updated_at = NOW(), created_at = 0
       |, *bound)
+      entry_id = db.xquery(%|
+        SELECT id FROM entry WHERE keyword = #{keyword}
+      |)
+      htmlify(entry_id)
 
       redirect_found '/'
     end
