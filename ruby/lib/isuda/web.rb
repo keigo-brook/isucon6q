@@ -98,7 +98,7 @@ module Isuda
         escaped_content = entry[:escaped_content]
         total_entries = db.xquery(%| SELECT count(id) AS total_entries FROM entry |).first[:total_entries].to_i
 
-        if entry[:linked] > total_entries
+        if entry[:linked_at].to_i > total_entries
           content = escaped_content
           keywords = db.xquery(%| SELECT keyword FROM entry WHERE id > #{entry[:linked]} ORDER BY  character_length(keyword) DESC |).to_a
           pattern = keywords.map {|k| Regexp.escape(k[:keyword]) }.join('|')
