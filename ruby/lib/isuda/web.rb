@@ -180,6 +180,35 @@ module Isuda
       isutar_initialize_url.path = '/initialize'
       Net::HTTP.get_response(isutar_initialize_url)
 
+      total_entries = db.xquery(%| SELECT MAX(id) AS total_entries FROM entry |).first[:total_entries].to_i
+      entries = db.xquery('SELECT * FROM entry').to_a.first
+      entries.each do |entry|
+        content = entry[:description]
+        keywords = db.xquery(%| SELECT keyword FROM entry ORDER BY  character_length(keyword) DESC |).to_a
+        pattern = keywords.map { |k| Regexp.escape(k[:keyword]) }.join('|')
+        kw2hash = {}
+        hashed_content = content.gsub(/(#{pattern})/) { |m|
+          matched_keyword = $1
+          "isuda_#{Digest::SHA1.hexdigest(matched_keyword)}".tap do |hash|
+            kw2hash[matched_keyword] = hash
+          end
+        }
+        escaped_content = Rack::Utils.escape_html(hashed_content)
+        kw2hash.each do |(keyword, hash)|
+          keyword_url = url("/keyword/#{Rack::Utils.escape_path(keyword)}")
+          anchor = '<a href="%s">%s</a>' % [keyword_url, Rack::Utils.escape_html(keyword)]
+          escaped_content.gsub!(hash, anchor)
+        end
+
+        query = %|
+              UPDATE entry
+              SET escaped_content = ?, linked = ?
+              WHERE id = ?
+            |
+        db.xquery(query, escaped_content, total_entries, entry[:id])
+      end
+
+
       content_type :json
       JSON.generate(result: 'ok')
     end
