@@ -11,6 +11,7 @@ require 'sinatra/base'
 require 'tilt/erubis'
 require 'stackprof'
 require 'pry-remote'
+require 'cgi'
 
 module Isuda
   class Web < ::Sinatra::Base
@@ -115,7 +116,7 @@ module Isuda
             anchor = '<a href="%s">%s</a>' % [keyword_url, Rack::Utils.escape_html(keyword)]
             escaped_content.gsub!(hash, anchor)
           end
-          escaped_content = Rack::Utils.unescape_html(escaped_content)
+          escaped_content = CGI.unescapeHTML(escaped_content)
 
           query = %|
             UPDATE entry
