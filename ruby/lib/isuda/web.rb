@@ -269,8 +269,8 @@ module Isuda
         ON DUPLICATE KEY UPDATE
         author_id = ?, keyword = ?, description = ?, updated_at = NOW(), linked = 0
       |, *bound)
-      entry_id = db.xquery(%| SELECT id FROM entry WHERE keyword = ? |, keyword)
-      htmlify(entry_id)
+      entry_id = db.xquery(%| SELECT id FROM entry WHERE keyword = ? |, keyword).first
+      htmlify(entry_id[:id])
 
       redirect_found '/'
     end

@@ -4099,3 +4099,165 @@ I, [2016-09-18T16:20:17.103223 #14384]  INFO -- : worker=3 spawned pid=14384
 I, [2016-09-18T16:20:17.103361 #14384]  INFO -- : worker=3 ready
 I, [2016-09-18T16:20:17.103860 #14387]  INFO -- : worker=4 spawned pid=14387
 I, [2016-09-18T16:20:17.103958 #14387]  INFO -- : worker=4 ready
+I, [2016-09-18T16:23:05.892055 #14366]  INFO -- : reaped #<Process::Status: pid 14376 exit 0> worker=0
+I, [2016-09-18T16:23:05.892156 #14366]  INFO -- : reaped #<Process::Status: pid 14378 exit 0> worker=1
+I, [2016-09-18T16:23:05.892192 #14366]  INFO -- : reaped #<Process::Status: pid 14381 exit 0> worker=2
+I, [2016-09-18T16:23:05.892221 #14366]  INFO -- : reaped #<Process::Status: pid 14384 exit 0> worker=3
+I, [2016-09-18T16:23:05.892247 #14366]  INFO -- : reaped #<Process::Status: pid 14387 exit 0> worker=4
+I, [2016-09-18T16:23:05.892298 #14366]  INFO -- : master complete
+I, [2016-09-18T16:23:06.304286 #19935]  INFO -- : Refreshing Gem list
+I, [2016-09-18T16:23:06.366226 #19935]  INFO -- : listening on addr=0.0.0.0:5001 fd=11
+I, [2016-09-18T16:23:06.366343 #19935]  INFO -- : worker=0 spawning...
+I, [2016-09-18T16:23:06.367303 #19935]  INFO -- : worker=1 spawning...
+I, [2016-09-18T16:23:06.367786 #19935]  INFO -- : worker=2 spawning...
+I, [2016-09-18T16:23:06.368387 #19946]  INFO -- : worker=0 spawned pid=19946
+I, [2016-09-18T16:23:06.368512 #19946]  INFO -- : worker=0 ready
+I, [2016-09-18T16:23:06.369116 #19935]  INFO -- : worker=3 spawning...
+I, [2016-09-18T16:23:06.369602 #19948]  INFO -- : worker=1 spawned pid=19948
+I, [2016-09-18T16:23:06.369713 #19948]  INFO -- : worker=1 ready
+I, [2016-09-18T16:23:06.370274 #19935]  INFO -- : worker=4 spawning...
+I, [2016-09-18T16:23:06.370797 #19951]  INFO -- : worker=2 spawned pid=19951
+I, [2016-09-18T16:23:06.370903 #19951]  INFO -- : worker=2 ready
+I, [2016-09-18T16:23:06.371444 #19935]  INFO -- : master process ready
+I, [2016-09-18T16:23:06.372203 #19954]  INFO -- : worker=3 spawned pid=19954
+I, [2016-09-18T16:23:06.372310 #19954]  INFO -- : worker=3 ready
+I, [2016-09-18T16:23:06.372800 #19957]  INFO -- : worker=4 spawned pid=19957
+I, [2016-09-18T16:23:06.372902 #19957]  INFO -- : worker=4 ready
+I, [2016-09-18T16:27:43.168600 #19935]  INFO -- : reaped #<Process::Status: pid 19946 exit 0> worker=0
+I, [2016-09-18T16:27:43.168698 #19935]  INFO -- : reaped #<Process::Status: pid 19948 exit 0> worker=1
+I, [2016-09-18T16:27:43.168754 #19935]  INFO -- : reaped #<Process::Status: pid 19951 exit 0> worker=2
+I, [2016-09-18T16:27:43.168782 #19935]  INFO -- : reaped #<Process::Status: pid 19954 exit 0> worker=3
+I, [2016-09-18T16:27:43.168806 #19935]  INFO -- : reaped #<Process::Status: pid 19957 exit 0> worker=4
+I, [2016-09-18T16:27:43.168862 #19935]  INFO -- : master complete
+I, [2016-09-18T16:27:43.544729 #20360]  INFO -- : Refreshing Gem list
+I, [2016-09-18T16:27:43.589316 #20360]  INFO -- : listening on addr=0.0.0.0:5001 fd=11
+I, [2016-09-18T16:27:43.589427 #20360]  INFO -- : worker=0 spawning...
+I, [2016-09-18T16:27:43.590192 #20360]  INFO -- : worker=1 spawning...
+I, [2016-09-18T16:27:43.590649 #20360]  INFO -- : worker=2 spawning...
+I, [2016-09-18T16:27:43.591231 #20371]  INFO -- : worker=0 spawned pid=20371
+I, [2016-09-18T16:27:43.591523 #20371]  INFO -- : worker=0 ready
+I, [2016-09-18T16:27:43.592078 #20360]  INFO -- : worker=3 spawning...
+I, [2016-09-18T16:27:43.593145 #20373]  INFO -- : worker=1 spawned pid=20373
+I, [2016-09-18T16:27:43.593238 #20373]  INFO -- : worker=1 ready
+I, [2016-09-18T16:27:43.593998 #20360]  INFO -- : worker=4 spawning...
+I, [2016-09-18T16:27:43.594599 #20376]  INFO -- : worker=2 spawned pid=20376
+I, [2016-09-18T16:27:43.594695 #20376]  INFO -- : worker=2 ready
+I, [2016-09-18T16:27:43.595255 #20360]  INFO -- : master process ready
+I, [2016-09-18T16:27:43.596043 #20379]  INFO -- : worker=3 spawned pid=20379
+I, [2016-09-18T16:27:43.596454 #20379]  INFO -- : worker=3 ready
+I, [2016-09-18T16:27:43.597703 #20382]  INFO -- : worker=4 spawned pid=20382
+I, [2016-09-18T16:27:43.597794 #20382]  INFO -- : worker=4 ready
+I, [2016-09-18T16:29:42.677595 #20360]  INFO -- : reaped #<Process::Status: pid 20371 exit 0> worker=0
+I, [2016-09-18T16:29:42.677689 #20360]  INFO -- : reaped #<Process::Status: pid 20373 exit 0> worker=1
+I, [2016-09-18T16:29:42.677729 #20360]  INFO -- : reaped #<Process::Status: pid 20376 exit 0> worker=2
+I, [2016-09-18T16:29:42.677759 #20360]  INFO -- : reaped #<Process::Status: pid 20379 exit 0> worker=3
+I, [2016-09-18T16:29:42.677784 #20360]  INFO -- : reaped #<Process::Status: pid 20382 exit 0> worker=4
+I, [2016-09-18T16:29:42.677838 #20360]  INFO -- : master complete
+I, [2016-09-18T16:29:43.042256 #20553]  INFO -- : Refreshing Gem list
+I, [2016-09-18T16:29:43.090239 #20553]  INFO -- : listening on addr=0.0.0.0:5001 fd=11
+I, [2016-09-18T16:29:43.092616 #20553]  INFO -- : worker=0 spawning...
+I, [2016-09-18T16:29:43.093387 #20553]  INFO -- : worker=1 spawning...
+I, [2016-09-18T16:29:43.093866 #20553]  INFO -- : worker=2 spawning...
+I, [2016-09-18T16:29:43.094491 #20564]  INFO -- : worker=0 spawned pid=20564
+I, [2016-09-18T16:29:43.094597 #20564]  INFO -- : worker=0 ready
+I, [2016-09-18T16:29:43.096323 #20553]  INFO -- : worker=3 spawning...
+I, [2016-09-18T16:29:43.097240 #20566]  INFO -- : worker=1 spawned pid=20566
+I, [2016-09-18T16:29:43.097340 #20566]  INFO -- : worker=1 ready
+I, [2016-09-18T16:29:43.097901 #20553]  INFO -- : worker=4 spawning...
+I, [2016-09-18T16:29:43.098770 #20569]  INFO -- : worker=2 spawned pid=20569
+I, [2016-09-18T16:29:43.098866 #20569]  INFO -- : worker=2 ready
+I, [2016-09-18T16:29:43.099438 #20553]  INFO -- : master process ready
+I, [2016-09-18T16:29:43.099996 #20572]  INFO -- : worker=3 spawned pid=20572
+I, [2016-09-18T16:29:43.100096 #20572]  INFO -- : worker=3 ready
+I, [2016-09-18T16:29:43.100623 #20575]  INFO -- : worker=4 spawned pid=20575
+I, [2016-09-18T16:29:43.100725 #20575]  INFO -- : worker=4 ready
+2016-09-18 16:31:56 - Mysql2::Error - MySQL server has gone away:
+	/home/isucon/.local/ruby/lib/ruby/gems/2.3.0/gems/mysql2-0.4.4/lib/mysql2/client.rb:107:in `_query'
+	/home/isucon/.local/ruby/lib/ruby/gems/2.3.0/gems/mysql2-0.4.4/lib/mysql2/client.rb:107:in `block in query'
+	/home/isucon/.local/ruby/lib/ruby/gems/2.3.0/gems/mysql2-0.4.4/lib/mysql2/client.rb:106:in `handle_interrupt'
+	/home/isucon/.local/ruby/lib/ruby/gems/2.3.0/gems/mysql2-0.4.4/lib/mysql2/client.rb:106:in `query'
+	/home/isucon/.local/ruby/lib/ruby/gems/2.3.0/gems/mysql2-cs-bind-0.0.6/lib/mysql2-cs-bind.rb:14:in `xquery'
+	/home/isucon/webapp/ruby/lib/isutar/web.rb:56:in `block in <class:Web>'
+	/home/isucon/.local/ruby/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:1611:in `call'
+	/home/isucon/.local/ruby/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:1611:in `block in compile!'
+	/home/isucon/.local/ruby/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:975:in `block (3 levels) in route!'
+	/home/isucon/.local/ruby/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:994:in `route_eval'
+	/home/isucon/.local/ruby/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:975:in `block (2 levels) in route!'
+	/home/isucon/.local/ruby/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:1015:in `block in process_route'
+	/home/isucon/.local/ruby/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:1013:in `catch'
+	/home/isucon/.local/ruby/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:1013:in `process_route'
+	/home/isucon/.local/ruby/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:973:in `block in route!'
+	/home/isucon/.local/ruby/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:972:in `each'
+	/home/isucon/.local/ruby/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:972:in `route!'
+	/home/isucon/.local/ruby/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:1085:in `block in dispatch!'
+	/home/isucon/.local/ruby/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:1067:in `block in invoke'
+	/home/isucon/.local/ruby/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:1067:in `catch'
+	/home/isucon/.local/ruby/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:1067:in `invoke'
+	/home/isucon/.local/ruby/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:1082:in `dispatch!'
+	/home/isucon/.local/ruby/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:907:in `block in call!'
+	/home/isucon/.local/ruby/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:1067:in `block in invoke'
+	/home/isucon/.local/ruby/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:1067:in `catch'
+	/home/isucon/.local/ruby/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:1067:in `invoke'
+	/home/isucon/.local/ruby/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:907:in `call!'
+	/home/isucon/.local/ruby/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:895:in `call'
+	/home/isucon/.local/ruby/lib/ruby/gems/2.3.0/gems/stackprof-0.2.9/lib/stackprof/middleware.rb:21:in `call'
+	/home/isucon/.local/ruby/lib/ruby/gems/2.3.0/gems/rack-protection-1.5.3/lib/rack/protection/xss_header.rb:18:in `call'
+	/home/isucon/.local/ruby/lib/ruby/gems/2.3.0/gems/rack-protection-1.5.3/lib/rack/protection/path_traversal.rb:16:in `call'
+	/home/isucon/.local/ruby/lib/ruby/gems/2.3.0/gems/rack-protection-1.5.3/lib/rack/protection/json_csrf.rb:18:in `call'
+	/home/isucon/.local/ruby/lib/ruby/gems/2.3.0/gems/rack-protection-1.5.3/lib/rack/protection/base.rb:49:in `call'
+	/home/isucon/.local/ruby/lib/ruby/gems/2.3.0/gems/rack-protection-1.5.3/lib/rack/protection/base.rb:49:in `call'
+	/home/isucon/.local/ruby/lib/ruby/gems/2.3.0/gems/rack-protection-1.5.3/lib/rack/protection/frame_options.rb:31:in `call'
+	/home/isucon/.local/ruby/lib/ruby/gems/2.3.0/gems/rack-1.6.4/lib/rack/nulllogger.rb:9:in `call'
+	/home/isucon/.local/ruby/lib/ruby/gems/2.3.0/gems/rack-1.6.4/lib/rack/head.rb:13:in `call'
+	/home/isucon/.local/ruby/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:182:in `call'
+	/home/isucon/.local/ruby/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:2013:in `call'
+	/home/isucon/.local/ruby/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:1487:in `block in call'
+	/home/isucon/.local/ruby/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:1787:in `synchronize'
+	/home/isucon/.local/ruby/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:1487:in `call'
+	/home/isucon/.local/ruby/lib/ruby/gems/2.3.0/gems/stackprof-0.2.9/lib/stackprof/middleware.rb:21:in `call'
+	/home/isucon/.local/ruby/lib/ruby/gems/2.3.0/gems/unicorn-5.1.0/lib/unicorn/http_server.rb:562:in `process_client'
+	/home/isucon/.local/ruby/lib/ruby/gems/2.3.0/gems/unicorn-5.1.0/lib/unicorn/http_server.rb:658:in `worker_loop'
+	/home/isucon/.local/ruby/lib/ruby/gems/2.3.0/gems/unicorn-5.1.0/lib/unicorn/http_server.rb:508:in `spawn_missing_workers'
+	/home/isucon/.local/ruby/lib/ruby/gems/2.3.0/gems/unicorn-5.1.0/lib/unicorn/http_server.rb:132:in `start'
+	/home/isucon/.local/ruby/lib/ruby/gems/2.3.0/gems/unicorn-5.1.0/bin/unicorn:126:in `<top (required)>'
+	/home/isucon/.local/ruby/bin/unicorn:23:in `load'
+	/home/isucon/.local/ruby/bin/unicorn:23:in `<top (required)>'
+	/home/isucon/.local/ruby/lib/ruby/gems/2.3.0/gems/bundler-1.13.0/lib/bundler/cli/exec.rb:74:in `load'
+	/home/isucon/.local/ruby/lib/ruby/gems/2.3.0/gems/bundler-1.13.0/lib/bundler/cli/exec.rb:74:in `kernel_load'
+	/home/isucon/.local/ruby/lib/ruby/gems/2.3.0/gems/bundler-1.13.0/lib/bundler/cli/exec.rb:27:in `run'
+	/home/isucon/.local/ruby/lib/ruby/gems/2.3.0/gems/bundler-1.13.0/lib/bundler/cli.rb:332:in `exec'
+	/home/isucon/.local/ruby/lib/ruby/gems/2.3.0/gems/bundler-1.13.0/lib/bundler/vendor/thor/lib/thor/command.rb:27:in `run'
+	/home/isucon/.local/ruby/lib/ruby/gems/2.3.0/gems/bundler-1.13.0/lib/bundler/vendor/thor/lib/thor/invocation.rb:126:in `invoke_command'
+	/home/isucon/.local/ruby/lib/ruby/gems/2.3.0/gems/bundler-1.13.0/lib/bundler/vendor/thor/lib/thor.rb:359:in `dispatch'
+	/home/isucon/.local/ruby/lib/ruby/gems/2.3.0/gems/bundler-1.13.0/lib/bundler/cli.rb:20:in `dispatch'
+	/home/isucon/.local/ruby/lib/ruby/gems/2.3.0/gems/bundler-1.13.0/lib/bundler/vendor/thor/lib/thor/base.rb:440:in `start'
+	/home/isucon/.local/ruby/lib/ruby/gems/2.3.0/gems/bundler-1.13.0/lib/bundler/cli.rb:11:in `start'
+	/home/isucon/.local/ruby/lib/ruby/gems/2.3.0/gems/bundler-1.13.0/exe/bundle:34:in `block in <top (required)>'
+	/home/isucon/.local/ruby/lib/ruby/gems/2.3.0/gems/bundler-1.13.0/lib/bundler/friendly_errors.rb:100:in `with_friendly_errors'
+	/home/isucon/.local/ruby/lib/ruby/gems/2.3.0/gems/bundler-1.13.0/exe/bundle:26:in `<top (required)>'
+	/home/isucon/.local/ruby/bin/bundle:23:in `load'
+	/home/isucon/.local/ruby/bin/bundle:23:in `<main>'
+I, [2016-09-18T16:31:57.223396 #20553]  INFO -- : reaped #<Process::Status: pid 20564 exit 0> worker=0
+I, [2016-09-18T16:31:57.223491 #20553]  INFO -- : reaped #<Process::Status: pid 20566 exit 0> worker=1
+I, [2016-09-18T16:31:57.223523 #20553]  INFO -- : reaped #<Process::Status: pid 20569 exit 0> worker=2
+I, [2016-09-18T16:31:57.223547 #20553]  INFO -- : reaped #<Process::Status: pid 20572 exit 0> worker=3
+I, [2016-09-18T16:31:57.223571 #20553]  INFO -- : reaped #<Process::Status: pid 20575 exit 0> worker=4
+I, [2016-09-18T16:31:57.223627 #20553]  INFO -- : master complete
+I, [2016-09-18T16:31:57.627573 #20718]  INFO -- : Refreshing Gem list
+I, [2016-09-18T16:31:57.674812 #20718]  INFO -- : listening on addr=0.0.0.0:5001 fd=11
+I, [2016-09-18T16:31:57.674923 #20718]  INFO -- : worker=0 spawning...
+I, [2016-09-18T16:31:57.675732 #20718]  INFO -- : worker=1 spawning...
+I, [2016-09-18T16:31:57.676354 #20718]  INFO -- : worker=2 spawning...
+I, [2016-09-18T16:31:57.676916 #20729]  INFO -- : worker=0 spawned pid=20729
+I, [2016-09-18T16:31:57.677035 #20729]  INFO -- : worker=0 ready
+I, [2016-09-18T16:31:57.677574 #20718]  INFO -- : worker=3 spawning...
+I, [2016-09-18T16:31:57.678018 #20731]  INFO -- : worker=1 spawned pid=20731
+I, [2016-09-18T16:31:57.678130 #20731]  INFO -- : worker=1 ready
+I, [2016-09-18T16:31:57.678654 #20718]  INFO -- : worker=4 spawning...
+I, [2016-09-18T16:31:57.679112 #20734]  INFO -- : worker=2 spawned pid=20734
+I, [2016-09-18T16:31:57.679217 #20734]  INFO -- : worker=2 ready
+I, [2016-09-18T16:31:57.679809 #20718]  INFO -- : master process ready
+I, [2016-09-18T16:31:57.680764 #20737]  INFO -- : worker=3 spawned pid=20737
+I, [2016-09-18T16:31:57.680872 #20737]  INFO -- : worker=3 ready
+I, [2016-09-18T16:31:57.681362 #20740]  INFO -- : worker=4 spawned pid=20740
+I, [2016-09-18T16:31:57.681467 #20740]  INFO -- : worker=4 ready
