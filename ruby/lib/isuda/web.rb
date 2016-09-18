@@ -115,6 +115,7 @@ module Isuda
             anchor = '<a href="%s">%s</a>' % [keyword_url, Rack::Utils.escape_html(keyword)]
             escaped_content.gsub!(hash, anchor)
           end
+          escaped_content = Rack::Utils.unescape_html(escaped_content)
 
           query = %|
             UPDATE entry
