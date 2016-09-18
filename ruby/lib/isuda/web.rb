@@ -95,13 +95,13 @@ module Isuda
         !validation['valid']
       end
 
-      def htmlify(entry_id)
+      def htmlify(entry_id, update: false)
         entry = db.xquery("SELECT description, escaped_content, linked FROM entry WHERE id = #{entry_id}").to_a.first
         escaped_content = entry[:escaped_content]
         #total_entries = db.xquery(%| SELECT count(id) AS total_entries FROM entry |).first[:total_entries].to_i
         total_entries = db.xquery(%| SELECT MAX(id) AS total_entries FROM entry |).first[:total_entries].to_i
 
-        if escaped_content.nil?
+        if escaped_content.nil? || update
           content = entry[:description]
           keywords = db.xquery(%| SELECT keyword FROM entry ORDER BY  character_length(keyword) DESC |).to_a
           pattern = keywords.map { |k| Regexp.escape(k[:keyword]) }.join('|')
@@ -270,7 +270,7 @@ module Isuda
         author_id = ?, keyword = ?, description = ?, updated_at = NOW(), linked = 0
       |, *bound)
       entry_id = db.xquery(%| SELECT id FROM entry WHERE keyword = ? |, keyword).first
-      htmlify(entry_id[:id])
+      htmlify(entry_id[:id], update: true)
 
       redirect_found '/'
     end
