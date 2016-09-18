@@ -4261,3 +4261,123 @@ I, [2016-09-18T16:31:57.680764 #20737]  INFO -- : worker=3 spawned pid=20737
 I, [2016-09-18T16:31:57.680872 #20737]  INFO -- : worker=3 ready
 I, [2016-09-18T16:31:57.681362 #20740]  INFO -- : worker=4 spawned pid=20740
 I, [2016-09-18T16:31:57.681467 #20740]  INFO -- : worker=4 ready
+I, [2016-09-18T16:43:02.250828 #20718]  INFO -- : reaped #<Process::Status: pid 20729 exit 0> worker=0
+I, [2016-09-18T16:43:02.250923 #20718]  INFO -- : reaped #<Process::Status: pid 20731 exit 0> worker=1
+I, [2016-09-18T16:43:02.250956 #20718]  INFO -- : reaped #<Process::Status: pid 20734 exit 0> worker=2
+I, [2016-09-18T16:43:02.250986 #20718]  INFO -- : reaped #<Process::Status: pid 20737 exit 0> worker=3
+I, [2016-09-18T16:43:02.251047 #20718]  INFO -- : reaped #<Process::Status: pid 20740 exit 0> worker=4
+I, [2016-09-18T16:43:02.251100 #20718]  INFO -- : master complete
+I, [2016-09-18T16:43:02.732766 #21225]  INFO -- : Refreshing Gem list
+I, [2016-09-18T16:43:02.784859 #21225]  INFO -- : listening on addr=0.0.0.0:5001 fd=11
+I, [2016-09-18T16:43:02.784968 #21225]  INFO -- : worker=0 spawning...
+I, [2016-09-18T16:43:02.786034 #21225]  INFO -- : worker=1 spawning...
+I, [2016-09-18T16:43:02.786524 #21225]  INFO -- : worker=2 spawning...
+I, [2016-09-18T16:43:02.787124 #21236]  INFO -- : worker=0 spawned pid=21236
+I, [2016-09-18T16:43:02.787241 #21236]  INFO -- : worker=0 ready
+I, [2016-09-18T16:43:02.788003 #21225]  INFO -- : worker=3 spawning...
+I, [2016-09-18T16:43:02.788480 #21238]  INFO -- : worker=1 spawned pid=21238
+I, [2016-09-18T16:43:02.788582 #21238]  INFO -- : worker=1 ready
+I, [2016-09-18T16:43:02.789104 #21225]  INFO -- : worker=4 spawning...
+I, [2016-09-18T16:43:02.789570 #21241]  INFO -- : worker=2 spawned pid=21241
+I, [2016-09-18T16:43:02.789676 #21241]  INFO -- : worker=2 ready
+I, [2016-09-18T16:43:02.790257 #21225]  INFO -- : master process ready
+I, [2016-09-18T16:43:02.790804 #21244]  INFO -- : worker=3 spawned pid=21244
+I, [2016-09-18T16:43:02.790916 #21244]  INFO -- : worker=3 ready
+I, [2016-09-18T16:43:02.791446 #21247]  INFO -- : worker=4 spawned pid=21247
+I, [2016-09-18T16:43:02.791550 #21247]  INFO -- : worker=4 ready
+I, [2016-09-18T16:48:32.278848 #21225]  INFO -- : reaped #<Process::Status: pid 21236 exit 0> worker=0
+I, [2016-09-18T16:48:32.278949 #21225]  INFO -- : reaped #<Process::Status: pid 21238 exit 0> worker=1
+I, [2016-09-18T16:48:32.278985 #21225]  INFO -- : reaped #<Process::Status: pid 21241 exit 0> worker=2
+I, [2016-09-18T16:48:32.279012 #21225]  INFO -- : reaped #<Process::Status: pid 21244 exit 0> worker=3
+I, [2016-09-18T16:48:32.279039 #21225]  INFO -- : reaped #<Process::Status: pid 21247 exit 0> worker=4
+I, [2016-09-18T16:48:32.279092 #21225]  INFO -- : master complete
+I, [2016-09-18T16:48:32.689182 #21957]  INFO -- : Refreshing Gem list
+I, [2016-09-18T16:48:32.730910 #21957]  INFO -- : listening on addr=0.0.0.0:5001 fd=11
+I, [2016-09-18T16:48:32.731023 #21957]  INFO -- : worker=0 spawning...
+I, [2016-09-18T16:48:32.731812 #21957]  INFO -- : worker=1 spawning...
+I, [2016-09-18T16:48:32.732282 #21957]  INFO -- : worker=2 spawning...
+I, [2016-09-18T16:48:32.732868 #21968]  INFO -- : worker=0 spawned pid=21968
+I, [2016-09-18T16:48:32.732983 #21968]  INFO -- : worker=0 ready
+I, [2016-09-18T16:48:32.733529 #21957]  INFO -- : worker=3 spawning...
+I, [2016-09-18T16:48:32.733998 #21970]  INFO -- : worker=1 spawned pid=21970
+I, [2016-09-18T16:48:32.734102 #21970]  INFO -- : worker=1 ready
+I, [2016-09-18T16:48:32.734618 #21957]  INFO -- : worker=4 spawning...
+I, [2016-09-18T16:48:32.735152 #21973]  INFO -- : worker=2 spawned pid=21973
+I, [2016-09-18T16:48:32.735255 #21973]  INFO -- : worker=2 ready
+I, [2016-09-18T16:48:32.735838 #21957]  INFO -- : master process ready
+I, [2016-09-18T16:48:32.736377 #21976]  INFO -- : worker=3 spawned pid=21976
+I, [2016-09-18T16:48:32.736482 #21976]  INFO -- : worker=3 ready
+I, [2016-09-18T16:48:32.736978 #21979]  INFO -- : worker=4 spawned pid=21979
+I, [2016-09-18T16:48:32.737087 #21979]  INFO -- : worker=4 ready
+I, [2016-09-18T16:52:10.324490 #21957]  INFO -- : reaped #<Process::Status: pid 21968 exit 0> worker=0
+I, [2016-09-18T16:52:10.324592 #21957]  INFO -- : reaped #<Process::Status: pid 21970 exit 0> worker=1
+I, [2016-09-18T16:52:10.324626 #21957]  INFO -- : reaped #<Process::Status: pid 21973 exit 0> worker=2
+I, [2016-09-18T16:52:10.324656 #21957]  INFO -- : reaped #<Process::Status: pid 21976 exit 0> worker=3
+I, [2016-09-18T16:52:10.324686 #21957]  INFO -- : reaped #<Process::Status: pid 21979 exit 0> worker=4
+I, [2016-09-18T16:52:10.324741 #21957]  INFO -- : master complete
+I, [2016-09-18T16:52:10.684680 #22384]  INFO -- : Refreshing Gem list
+I, [2016-09-18T16:52:10.722640 #22384]  INFO -- : listening on addr=0.0.0.0:5001 fd=11
+I, [2016-09-18T16:52:10.722739 #22384]  INFO -- : worker=0 spawning...
+I, [2016-09-18T16:52:10.724057 #22384]  INFO -- : worker=1 spawning...
+I, [2016-09-18T16:52:10.724541 #22384]  INFO -- : worker=2 spawning...
+I, [2016-09-18T16:52:10.725450 #22394]  INFO -- : worker=0 spawned pid=22394
+I, [2016-09-18T16:52:10.725562 #22394]  INFO -- : worker=0 ready
+I, [2016-09-18T16:52:10.726098 #22384]  INFO -- : worker=3 spawning...
+I, [2016-09-18T16:52:10.726551 #22396]  INFO -- : worker=1 spawned pid=22396
+I, [2016-09-18T16:52:10.726658 #22396]  INFO -- : worker=1 ready
+I, [2016-09-18T16:52:10.730831 #22384]  INFO -- : worker=4 spawning...
+I, [2016-09-18T16:52:10.732091 #22399]  INFO -- : worker=2 spawned pid=22399
+I, [2016-09-18T16:52:10.732208 #22399]  INFO -- : worker=2 ready
+I, [2016-09-18T16:52:10.732763 #22384]  INFO -- : master process ready
+I, [2016-09-18T16:52:10.733873 #22402]  INFO -- : worker=3 spawned pid=22402
+I, [2016-09-18T16:52:10.733982 #22402]  INFO -- : worker=3 ready
+I, [2016-09-18T16:52:10.734465 #22405]  INFO -- : worker=4 spawned pid=22405
+I, [2016-09-18T16:52:10.734569 #22405]  INFO -- : worker=4 ready
+I, [2016-09-18T17:00:49.385989 #22384]  INFO -- : reaped #<Process::Status: pid 22394 exit 0> worker=0
+I, [2016-09-18T17:00:49.386092 #22384]  INFO -- : reaped #<Process::Status: pid 22396 exit 0> worker=1
+I, [2016-09-18T17:00:49.386139 #22384]  INFO -- : reaped #<Process::Status: pid 22399 exit 0> worker=2
+I, [2016-09-18T17:00:49.386168 #22384]  INFO -- : reaped #<Process::Status: pid 22402 exit 0> worker=3
+I, [2016-09-18T17:00:49.386194 #22384]  INFO -- : reaped #<Process::Status: pid 22405 exit 0> worker=4
+I, [2016-09-18T17:00:49.386278 #22384]  INFO -- : master complete
+I, [2016-09-18T17:00:49.790727 #22757]  INFO -- : Refreshing Gem list
+I, [2016-09-18T17:00:49.850783 #22757]  INFO -- : listening on addr=0.0.0.0:5001 fd=11
+I, [2016-09-18T17:00:49.850891 #22757]  INFO -- : worker=0 spawning...
+I, [2016-09-18T17:00:49.851846 #22757]  INFO -- : worker=1 spawning...
+I, [2016-09-18T17:00:49.852309 #22757]  INFO -- : worker=2 spawning...
+I, [2016-09-18T17:00:49.852997 #22768]  INFO -- : worker=0 spawned pid=22768
+I, [2016-09-18T17:00:49.853106 #22768]  INFO -- : worker=0 ready
+I, [2016-09-18T17:00:49.853951 #22757]  INFO -- : worker=3 spawning...
+I, [2016-09-18T17:00:49.854433 #22770]  INFO -- : worker=1 spawned pid=22770
+I, [2016-09-18T17:00:49.854530 #22770]  INFO -- : worker=1 ready
+I, [2016-09-18T17:00:49.855612 #22757]  INFO -- : worker=4 spawning...
+I, [2016-09-18T17:00:49.856099 #22773]  INFO -- : worker=2 spawned pid=22773
+I, [2016-09-18T17:00:49.856198 #22773]  INFO -- : worker=2 ready
+I, [2016-09-18T17:00:49.859112 #22757]  INFO -- : master process ready
+I, [2016-09-18T17:00:49.861436 #22776]  INFO -- : worker=3 spawned pid=22776
+I, [2016-09-18T17:00:49.861545 #22776]  INFO -- : worker=3 ready
+I, [2016-09-18T17:00:49.862055 #22779]  INFO -- : worker=4 spawned pid=22779
+I, [2016-09-18T17:00:49.862149 #22779]  INFO -- : worker=4 ready
+I, [2016-09-18T17:03:15.650698 #22757]  INFO -- : reaped #<Process::Status: pid 22768 exit 0> worker=0
+I, [2016-09-18T17:03:15.650867 #22757]  INFO -- : reaped #<Process::Status: pid 22770 exit 0> worker=1
+I, [2016-09-18T17:03:15.650908 #22757]  INFO -- : reaped #<Process::Status: pid 22773 exit 0> worker=2
+I, [2016-09-18T17:03:15.650940 #22757]  INFO -- : reaped #<Process::Status: pid 22776 exit 0> worker=3
+I, [2016-09-18T17:03:15.650966 #22757]  INFO -- : reaped #<Process::Status: pid 22779 exit 0> worker=4
+I, [2016-09-18T17:03:15.651018 #22757]  INFO -- : master complete
+I, [2016-09-18T17:08:04.533152 #865]  INFO -- : Refreshing Gem list
+I, [2016-09-18T17:08:04.873947 #865]  INFO -- : listening on addr=0.0.0.0:5001 fd=11
+I, [2016-09-18T17:08:04.874069 #865]  INFO -- : worker=0 spawning...
+I, [2016-09-18T17:08:04.874671 #865]  INFO -- : worker=1 spawning...
+I, [2016-09-18T17:08:04.875097 #1219]  INFO -- : worker=0 spawned pid=1219
+I, [2016-09-18T17:08:04.875215 #1219]  INFO -- : worker=0 ready
+I, [2016-09-18T17:08:04.875728 #865]  INFO -- : worker=2 spawning...
+I, [2016-09-18T17:08:04.886755 #865]  INFO -- : worker=3 spawning...
+I, [2016-09-18T17:08:04.887643 #1233]  INFO -- : worker=2 spawned pid=1233
+I, [2016-09-18T17:08:04.887805 #1222]  INFO -- : worker=1 spawned pid=1222
+I, [2016-09-18T17:08:04.887858 #1233]  INFO -- : worker=2 ready
+I, [2016-09-18T17:08:04.887919 #1222]  INFO -- : worker=1 ready
+I, [2016-09-18T17:08:04.910484 #865]  INFO -- : worker=4 spawning...
+I, [2016-09-18T17:08:04.911668 #865]  INFO -- : master process ready
+I, [2016-09-18T17:08:04.912339 #1244]  INFO -- : worker=4 spawned pid=1244
+I, [2016-09-18T17:08:04.912450 #1244]  INFO -- : worker=4 ready
+I, [2016-09-18T17:08:04.913027 #1242]  INFO -- : worker=3 spawned pid=1242
+I, [2016-09-18T17:08:04.913150 #1242]  INFO -- : worker=3 ready
