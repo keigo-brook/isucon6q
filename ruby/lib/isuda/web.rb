@@ -93,25 +93,35 @@ module Isuda
         ! validation['valid']
       end
 
-      def htmlify(content)
-        keywords = db.xquery(%| SELECT keyword FROM entry ORDER BY  character_length(keyword) DESC |).to_a
-        #binding.remote_pry
-        pattern = keywords.map {|k| Regexp.escape(k[:keyword]) }.join('|')
-        kw2hash = {}
-        #binding.remote_pry
-        hashed_content = content.gsub(/(#{pattern})/) {|m|
-          matched_keyword = $1
-          "isuda_#{Digest::SHA1.hexdigest(matched_keyword)}".tap do |hash|
-            kw2hash[matched_keyword] = hash
+      def htmlify(entry_id)
+        entry = db.xquery("SELECT description, escaped_content FROM entry WHERE id = #{entry_id}")
+        escaped_content = entry[:escaped_content]
+        if escaped_content.nil?
+          keywords = db.xquery(%| SELECT keyword FROM entry ORDER BY  character_length(keyword) DESC |).to_a
+          pattern = keywords.map {|k| Regexp.escape(k[:keyword]) }.join('|')
+          kw2hash = {}
+          hashed_content = content.gsub(/(#{pattern})/) {|m|
+            matched_keyword = $1
+            "isuda_#{Digest::SHA1.hexdigest(matched_keyword)}".tap do |hash|
+              kw2hash[matched_keyword] = hash
+            end
+          }
+          escaped_content = Rack::Utils.escape_html(hashed_content)
+          kw2hash.each do |(keyword, hash)|
+            keyword_url = url("/keyword/#{Rack::Utils.escape_path(keyword)}")
+            anchor = '<a href="%s">%s</a>' % [keyword_url, Rack::Utils.escape_html(keyword)]
+            escaped_content.gsub!(hash, anchor)
           end
-        }
-        escaped_content = Rack::Utils.escape_html(hashed_content)
-        kw2hash.each do |(keyword, hash)|
-          keyword_url = url("/keyword/#{Rack::Utils.escape_path(keyword)}")
-          anchor = '<a href="%s">%s</a>' % [keyword_url, Rack::Utils.escape_html(keyword)]
-          escaped_content.gsub!(hash, anchor)
+
+          query = %|
+            UPDATE entry
+            SET escaped_content = ?
+            WHERE id = ?
+          |
+          db.xquery(query, escaped_content, entry_id)
+          escaped_content = escaped_content.gsub(/\n/, "<br />\n")
         end
-        escaped_content.gsub(/\n/, "<br />\n")
+        escaped_content
       end
 
       def uri_escape(str)
@@ -147,13 +157,13 @@ module Isuda
       page = (params[:page] || 1).to_i
 
       entries = db.xquery(%|
-        SELECT description, keyword FROM entry
+        SELECT id, keyword FROM entry
         ORDER BY updated_at DESC
         LIMIT #{per_page}
         OFFSET #{per_page * (page - 1)}
       |)
       entries.each do |entry|
-        entry[:html] = htmlify(entry[:description])
+        entry[:html] = htmlify(entry[:id])
         entry[:stars] = load_stars(entry[:keyword])
       end
 
