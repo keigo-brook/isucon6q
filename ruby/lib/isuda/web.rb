@@ -119,12 +119,12 @@ module Isuda
 
           query = %|
             UPDATE entry
-            SET escaped_content = ?
+            SET escaped_content = ?, linked = ?
             WHERE id = ?
           |
-          db.xquery(query, escaped_content, entry_id)
+          db.xquery(query, escaped_content, total_entries, entry_id)
           escaped_content = escaped_content.gsub(/\n/, "<br />\n")
-        elsif entry[:linked_at].to_i < total_entries
+        elsif entry[:linked].to_i < total_entries
           content = escaped_content
           keywords = db.xquery(%| SELECT keyword FROM entry WHERE id > #{entry[:linked]} ORDER BY  character_length(keyword) DESC |).to_a
           pattern = keywords.map { |k| Regexp.escape(k[:keyword]) }.join('|')
@@ -148,7 +148,7 @@ module Isuda
             SET escaped_content = ?, linked = ?
             WHERE id = ?
           |
-          db.xquery(query, escaped_content, entry_id, total_entries)
+          db.xquery(query, escaped_content, total_entries, entry_id)
           escaped_content = escaped_content.gsub(/\n/, "<br />\n")
         end
         escaped_content
