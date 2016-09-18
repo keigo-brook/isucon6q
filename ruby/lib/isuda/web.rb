@@ -98,7 +98,8 @@ module Isuda
       def htmlify(entry_id)
         entry = db.xquery("SELECT description, escaped_content, linked FROM entry WHERE id = #{entry_id}").to_a.first
         escaped_content = entry[:escaped_content]
-        total_entries = db.xquery(%| SELECT count(id) AS total_entries FROM entry |).first[:total_entries].to_i
+        #total_entries = db.xquery(%| SELECT count(id) AS total_entries FROM entry |).first[:total_entries].to_i
+        total_entries = db.xquery(%| SELECT MAX(id) AS total_entries FROM entry |).first[:total_entries].to_i
 
         if escaped_content.nil?
           content = entry[:description]
