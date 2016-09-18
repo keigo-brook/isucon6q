@@ -98,7 +98,8 @@ module Isuda
       def htmlify(entry_id)
         entry = db.xquery("SELECT description, escaped_content, linked FROM entry WHERE id = #{entry_id}").to_a.first
         escaped_content = entry[:escaped_content]
-        total_entries = db.xquery(%| SELECT count(id) AS total_entries FROM entry |).first[:total_entries].to_i
+        #total_entries = db.xquery(%| SELECT count(id) AS total_entries FROM entry |).first[:total_entries].to_i
+        total_entries = db.xquery(%| SELECT MAX(id) AS total_entries FROM entry |).first[:total_entries].to_i
 
         if escaped_content.nil?
           content = entry[:description]
@@ -189,9 +190,8 @@ module Isuda
 
       entries = db.xquery(%|
         SELECT id, keyword FROM entry
+        WHERE id BETWEEN #{per_page * (page - 1)}-1 AND #{per_page * (page - 1)}+#{per_page}
         ORDER BY updated_at DESC
-        LIMIT #{per_page}
-        OFFSET #{per_page * (page - 1)}
                           |)
       entries.each do |entry|
         entry[:html] = htmlify(entry[:id])
@@ -267,8 +267,12 @@ module Isuda
         INSERT INTO entry (author_id, keyword, description, created_at, updated_at)
         VALUES (?, ?, ?, NOW(), NOW())
         ON DUPLICATE KEY UPDATE
-        author_id = ?, keyword = ?, description = ?, updated_at = NOW()
+        author_id = ?, keyword = ?, description = ?, updated_at = NOW(), linked = 0
       |, *bound)
+      entry_id = db.xquery(%|
+        SELECT id FROM entry WHERE keyword = #{keyword}
+      |)
+      htmlify(entry_id)
 
       redirect_found '/'
     end
@@ -276,8 +280,8 @@ module Isuda
     get '/keyword/:keyword', set_name: true do
       keyword = params[:keyword] or halt(400)
 
-      entry = db.xquery(%| SELECT id FROM entry WHERE keyword = ? |, keyword).first or halt(404)
-      entry[:stars] = load_stars(keyword)
+      entry = db.xquery(%| SELECT id, keyword FROM entry WHERE keyword = ? |, keyword).first or halt(404)
+      entry[:stars] = load_stars(entry[:keyword])
       entry[:html] = htmlify(entry[:id])
 
       locals = {
