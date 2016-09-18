@@ -94,9 +94,10 @@ module Isuda
       end
 
       def htmlify(entry_id)
-        entry = db.xquery("SELECT description, escaped_content FROM entry WHERE id = #{entry_id}")
+        entry = db.xquery("SELECT description, escaped_content FROM entry WHERE id = #{entry_id}").to_a.first
         escaped_content = entry[:escaped_content]
         if escaped_content.nil?
+          content = entry[:description]
           keywords = db.xquery(%| SELECT keyword FROM entry ORDER BY  character_length(keyword) DESC |).to_a
           pattern = keywords.map {|k| Regexp.escape(k[:keyword]) }.join('|')
           kw2hash = {}
