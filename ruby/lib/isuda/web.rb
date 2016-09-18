@@ -60,6 +60,7 @@ module Isuda
               _, _, attrs_part = settings.dsn.split(':', 3)
               attrs = Hash[attrs_part.split(';').map { |part| part.split('=', 2) }]
               mysql = Mysql2::Client.new(
+                  socket: '/var/run/mysqld/mysqld.sock',
                   username: settings.db_user,
                   password: settings.db_password,
                   database: attrs['db'],
@@ -241,7 +242,7 @@ module Isuda
 
     post '/login' do
       name = params[:name]
-      user = db.xquery(%| SELECT password, salt FROM user WHERE name = ? |, name).first
+      user = db.xquery(%| SELECT password, salt, id FROM user WHERE name = ? |, name).first
       halt(403) unless user
       halt(403) unless user[:password] == encode_with_salt(password: params[:password], salt: user[:salt])
 
