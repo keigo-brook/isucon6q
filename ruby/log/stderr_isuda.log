@@ -4893,3 +4893,51 @@ I, [2016-09-18T13:38:27.219762 #31486]  INFO -- : worker=3 spawned pid=31486
 I, [2016-09-18T13:38:27.219871 #31486]  INFO -- : worker=3 ready
 I, [2016-09-18T13:38:27.220160 #31489]  INFO -- : worker=4 spawned pid=31489
 I, [2016-09-18T13:38:27.220263 #31489]  INFO -- : worker=4 ready
+I, [2016-09-18T13:45:44.065373 #31472]  INFO -- : reaped #<Process::Status: pid 31483 exit 0> worker=2
+I, [2016-09-18T13:45:44.065490 #31472]  INFO -- : reaped #<Process::Status: pid 31486 exit 0> worker=3
+I, [2016-09-18T13:45:44.165784 #31472]  INFO -- : reaped #<Process::Status: pid 31477 exit 0> worker=0
+I, [2016-09-18T13:45:44.165879 #31472]  INFO -- : reaped #<Process::Status: pid 31480 exit 0> worker=1
+I, [2016-09-18T13:45:44.165965 #31472]  INFO -- : reaped #<Process::Status: pid 31489 exit 0> worker=4
+I, [2016-09-18T13:45:44.166023 #31472]  INFO -- : master complete
+I, [2016-09-18T13:45:44.534962 #37602]  INFO -- : Refreshing Gem list
+I, [2016-09-18T13:45:44.733218 #37602]  INFO -- : listening on addr=0.0.0.0:5000 fd=7
+I, [2016-09-18T13:45:44.733332 #37602]  INFO -- : worker=0 spawning...
+I, [2016-09-18T13:45:44.734299 #37602]  INFO -- : worker=1 spawning...
+I, [2016-09-18T13:45:44.734904 #37607]  INFO -- : worker=0 spawned pid=37607
+I, [2016-09-18T13:45:44.735031 #37607]  INFO -- : worker=0 ready
+I, [2016-09-18T13:45:44.735761 #37602]  INFO -- : worker=2 spawning...
+I, [2016-09-18T13:45:44.736070 #37610]  INFO -- : worker=1 spawned pid=37610
+I, [2016-09-18T13:45:44.736182 #37610]  INFO -- : worker=1 ready
+I, [2016-09-18T13:45:44.736281 #37602]  INFO -- : worker=3 spawning...
+I, [2016-09-18T13:45:44.736719 #37613]  INFO -- : worker=2 spawned pid=37613
+I, [2016-09-18T13:45:44.736798 #37602]  INFO -- : worker=4 spawning...
+I, [2016-09-18T13:45:44.736826 #37613]  INFO -- : worker=2 ready
+I, [2016-09-18T13:45:44.737489 #37602]  INFO -- : master process ready
+I, [2016-09-18T13:45:44.737845 #37619]  INFO -- : worker=4 spawned pid=37619
+I, [2016-09-18T13:45:44.737961 #37619]  INFO -- : worker=4 ready
+I, [2016-09-18T13:45:44.737934 #37616]  INFO -- : worker=3 spawned pid=37616
+I, [2016-09-18T13:45:44.738049 #37616]  INFO -- : worker=3 ready
+I, [2016-09-18T13:47:02.774357 #37602]  INFO -- : reaped #<Process::Status: pid 37607 exit 0> worker=0
+I, [2016-09-18T13:47:02.774455 #37602]  INFO -- : reaped #<Process::Status: pid 37610 exit 0> worker=1
+I, [2016-09-18T13:47:02.774493 #37602]  INFO -- : reaped #<Process::Status: pid 37613 exit 0> worker=2
+I, [2016-09-18T13:47:02.774586 #37602]  INFO -- : reaped #<Process::Status: pid 37616 exit 0> worker=3
+I, [2016-09-18T13:47:02.774614 #37602]  INFO -- : reaped #<Process::Status: pid 37619 exit 0> worker=4
+I, [2016-09-18T13:47:02.774670 #37602]  INFO -- : master complete
+I, [2016-09-18T13:47:03.084405 #37663]  INFO -- : Refreshing Gem list
+I, [2016-09-18T13:47:03.251545 #37663]  INFO -- : listening on addr=0.0.0.0:5000 fd=7
+I, [2016-09-18T13:47:03.251655 #37663]  INFO -- : worker=0 spawning...
+I, [2016-09-18T13:47:03.252579 #37663]  INFO -- : worker=1 spawning...
+I, [2016-09-18T13:47:03.253573 #37667]  INFO -- : worker=0 spawned pid=37667
+I, [2016-09-18T13:47:03.253688 #37667]  INFO -- : worker=0 ready
+I, [2016-09-18T13:47:03.254401 #37663]  INFO -- : worker=2 spawning...
+I, [2016-09-18T13:47:03.254797 #37670]  INFO -- : worker=1 spawned pid=37670
+I, [2016-09-18T13:47:03.254900 #37670]  INFO -- : worker=1 ready
+I, [2016-09-18T13:47:03.255623 #37663]  INFO -- : worker=3 spawning...
+I, [2016-09-18T13:47:03.256229 #37673]  INFO -- : worker=2 spawned pid=37673
+I, [2016-09-18T13:47:03.256335 #37673]  INFO -- : worker=2 ready
+I, [2016-09-18T13:47:03.256987 #37663]  INFO -- : worker=4 spawning...
+I, [2016-09-18T13:47:03.257413 #37676]  INFO -- : worker=3 spawned pid=37676
+I, [2016-09-18T13:47:03.257514 #37676]  INFO -- : worker=3 ready
+I, [2016-09-18T13:47:03.257922 #37663]  INFO -- : master process ready
+I, [2016-09-18T13:47:03.258261 #37679]  INFO -- : worker=4 spawned pid=37679
+I, [2016-09-18T13:47:03.258355 #37679]  INFO -- : worker=4 ready
