@@ -6,6 +6,7 @@ require 'mysql2'
 require 'mysql2-cs-bind'
 require 'rack/utils'
 require 'sinatra/base'
+require 'stackprof'
 
 module Isutar
   class Web < ::Sinatra::Base
@@ -15,6 +16,8 @@ module Isutar
     set :db_password, ENV['ISUTAR_DB_PASSWORD'] || ''
     set :dsn, ENV['ISUTAR_DSN'] || 'dbi:mysql:db=isutar'
     set :isuda_origin, ENV['ISUDA_ORIGIN'] || 'http://localhost:5000'
+    Dir.mkdir('/tmp/stackprof') unless File.exist?('/tmp/stackprof')
+    use StackProf::Middleware, enabled: true, mode: :wall, interval: 500, save_every: 100, path: '/tmp/stackprof'
 
     configure :development do
       require 'sinatra/reloader'
